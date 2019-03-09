@@ -1,2 +1,2 @@
-# Golangproject
-golang learning process to do the project
+# myscript
+some python script in my study
