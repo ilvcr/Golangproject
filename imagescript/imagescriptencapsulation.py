@@ -389,22 +389,28 @@ def sharppen_image(im):
             [-1,2,8,2,-1],
             [-1,2,2,2,-1], 
             [-1,-1,-1,-1,-1]])/8.0
+    kernel_sharpen_4 = np.array([
+            [0,-1,0],
+            [-1,5,-1],
+            [0,-1,0]])
     #卷积
     im_1 = cv2.filter2D(im,-1,kernel_sharpen_1)
     im_2 = cv2.filter2D(im,-1,kernel_sharpen_2)
     im_3 = cv2.filter2D(im,-1,kernel_sharpen_3)
+    im_4 = cv2.filter2D(im,-1,kernel_sharpen_4) #锐化通用卷积
     
     #显示锐化效果
     cv2.imshow('Original Image', im)
     cv2.imshow('sharpen_1 Image', im_1)
     cv2.imshow('sharpen_2 Image', im_2)
     cv2.imshow('sharpen_3 Image', im_3)
+    cv2.imshow('sharpen_3 Image', im_4)
     
     #停顿
     if cv2.waitKey(0) & 0xFF == 27:
         cv2.destroyAllWindows()
     
-    return im, im_1, im_2, im_3
+    return im, im_1, im_2, im_3, im_4
     
 
 def image2gray_handle(im):
