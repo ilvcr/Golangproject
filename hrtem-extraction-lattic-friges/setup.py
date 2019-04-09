@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
 # File Name: setup.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Apr  9 16:29:57 2018
+# Created Time: Tue Apr  24 16:29:57 2018
 # Description: 创建源代码压缩包或安装软件
 #************************************************************************#
 
