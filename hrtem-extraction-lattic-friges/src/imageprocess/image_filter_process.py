@@ -6,113 +6,128 @@
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
 # Created Time: Tue Apr  9 11:36:15 2019
-# Description: 
+# Description: ¿¿¿¿¿¿
 #************************************************************************#
 
-def mean_filter_image(im):
-    '''
-        µ÷ÓÃOpenCVÊµÏÖ¾ùÖµÂË²¨
-        º¯ÊýÔ­ÐÍ:result = cv2.blur(Ô­Ê¼Í¼Ïñ,ºË´óÐ¡)
-        ÆäÖÐ:
-            ºË´óÐ¡ÊÇÒÔ£¨¿í¶È£¬¸ß¶È£©±íÊ¾µÄÔª×æÐÎÊ½;
-            ³£¼ûµÄÐÎÊ½°üÀ¨:ºË´óÐ¡£¨3, 3£©ºÍ£¨5, 5£©
-    '''
-    #img = cv2.imread('test01.png')
-    source = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 
-    # ¾ùÖµÂË²¨
-    result = cv2.blur(source, (5, 5))
+class imageFilter(object):
+    '''
+        ¿¿¿¿¿¿
+    '''
+    def __init__(self):
+        pass
 
-    # ÏÔÊ¾Í¼ÐÎ
-    titles = ['Source Image', 'Blur Image'] 
-    image = [source, result] 
-    for i in xrange(2): 
-        plt.subplot(1,2,i+1)
-        plt.imshow(images[i], 'gray') 
-        plt.title(titles[i]) 
-        plt.xticks([])
-        plt.yticks([]) 
-    
-    plt.show() 
-    
-    return image
-  
-def box_filter_image(im):
-    '''
-        µ÷ÓÃOpenCVÊµÏÖ·½¿òÂË²¨
-        º¯ÊýÔ­ÐÍ:result = cv2.boxFilter(Ô­Ê¼Í¼Ïñ, Ä¿±êÍ¼ÏñÉî¶È, ºË´óÐ¡, normalizeÊôÐÔ)
-        ÆäÖÐ:
-            Ä¿±êÍ¼ÏñÉî¶ÈÊÇintÀàÐÍ;Í¨³£ÓÃ¡°-1¡±±íÊ¾ÓëÔ­Ê¼Í¼ÏñÒ»Ö±;
-            ºË´óÐ¡Ö÷Òª°üÀ¨£¨3;3£©ºÍ£¨5;5£©
-    '''
-    source = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
-    
-    #·½¿òÂË²¨ 
-    result = cv2.boxFilter(source, -1, (5,5), normalize=1) 
-    
-    #ÏÔÊ¾Í¼ÐÎ 
-    titles = ['Source Image', 'BoxFilter Image'] 
-    image = [source, result] 
-    
-    for i in xrange(2): 
-        plt.subplot(1,2,i+1)
-        plt.imshow(images[i], 'gray') 
-        plt.title(titles[i]) 
+    def mean_filter_image(self, im):
+        '''
+            ¿¿opencv¿¿¿¿¿¿
+            ¿¿¿¿:
+                result = cv2.blur(¿¿¿¿ ,¿¿¿)
+            ¿¿:
+                ¿¿¿¿(¿¿, ¿¿)¿¿¿¿¿¿¿,
+                ¿¿¿¿¿¿¿(3, 3)¿(5, 5)
+        '''
+        #img = cv2.imread('test01.png')
+        im_source = cv2.cvtColor(self.im, cv2.COLOR_BGR2RGB)
+
+        # ¿¿¿¿
+        im_result = cv2.blur(im_source, (5, 5))
+
+        # ¿¿¿¿
+        titles = ['Source Image', 'Blur Image'] 
+        blur_image = [im_source, im_result] 
+        for i in range(2): 
+            plt.subplot(1,2,i+1)
+            plt.imshow(blur_images[i], 'gray') 
+            plt.title(titles[i]) 
+            plt.xticks([])
+            plt.yticks([]) 
+        
+        plt.show() 
+        
+        return im_source, im_result, blur_image
+
+
+    def box_filter_image(self, im):
+        '''
+            ¿¿opencv¿¿¿¿¿¿
+            ¿¿¿¿: 
+                result = cv2.boxFilter(¿¿¿¿, ¿¿¿¿¿¿, ¿¿¿, normalize¿¿)
+            ¿¿:
+                ¿¿¿¿¿¿¿int¿¿, ¿¿¿"-1"¿¿¿¿¿¿¿¿¿;
+                ¿¿¿¿¿¿¿(3, 3)¿(5, 5)
+        '''
+        im_source = cv2.cvtColor(self.im, cv2.COLOR_BGR2RGB)
+        
+        #¿¿¿¿
+        im_result = cv2.boxFilter(im_source, -1, (5,5), normalize=1) 
+        
+        #¿¿¿¿
+        titles = ['Source Image', 'BoxFilter Image'] 
+        box_filter_image = [im_source, im_result] 
+        
+        for i in range(2): 
+            plt.subplot(1,2,i+1)
+            plt.imshow(box_filter_image[i], 'gray') 
+            plt.title(titles[i]) 
         plt.xticks([])
         plt.yticks([])
     
     plt.show() 
     
-    return image
-    
-def gaussian_blur_filter_image(im):
-    '''
-        µ÷ÓÃOpenCVÊµÏÖ¸ßË¹ÂË²¨
-        º¯ÊýÔ­ÐÍ£ºdst = cv2.GaussianBlur(src, ksize, sigmaX)
-        ÆäÖÐ,
-            Ä¿±êÍ¼ÏñÉî¶ÈÊÇintÀàÐÍ, Í¨³£ÓÃ¡°-1¡±±íÊ¾ÓëÔ­Ê¼Í¼ÏñÒ»Ö±;
-            ºË´óÐ¡Ö÷Òª°üÀ¨£¨3, 3£©ºÍ£¨5, 5£©
-    '''
-    source = cv2.cvtColor(img,cv2.COLOR_BGR2RGB) 
-    
-    #¸ßË¹ÂË²¨ 
-    result = cv2.GaussianBlur(source, (3,3), 0) 
-    
-    #ÏÔÊ¾Í¼ÐÎ 
-    titles = ['Source Image', 'GaussianBlur Image'] 
-    image = [source, result] 
-    
-    for i in xrange(2): 
-        plt.subplot(1,2,i+1)
-        plt.imshow(images[i], 'gray') 
-        plt.title(titles[i]) 
-        plt.xticks([])
-        plt.yticks([]) 
-    
-    plt.show() 
-    
-    return image
-    
-def median_blur_filter_image(im):
-    '''
-        µ÷ÓÃOpenCVÊµÏÖÖÐÖµÂË²¨
-        º¯ÊýÔ­ÐÍ£ºdst = cv2.medianBlur(src, ksize)
-        ÆäÖÐ:
-            src±íÊ¾Ô´ÎÄ¼þ,ksize±íÊ¾ºË´óÐ¡;
-            ºË±ØÐëÊÇ´óÓÚ1µÄÆæÊý, Èç3¡¢5¡¢7µÈ
-    '''
-    #¶ÁÈ¡Í¼Æ¬ 
-    #img = cv2.imread('test01.png') 
-    
-    #ÖÐÖµÂË²¨ 
-    result = cv2.medianBlur(img, 3) 
-    
-    #ÏÔÊ¾Í¼Ïñ 
-    cv2.imshow("source img", img) 
-    cv2.imshow("medianBlur", result) 
-    
-    #µÈ´ýÏÔÊ¾ 
-    cv2.waitKey(0) 
-    cv2.destroyAllWindows()
-    
-    return result
+    return im_source, im_result, box_filter_image
+
+
+    def gaussian_blur_filter_image(self, im):
+        '''
+            ¿¿opencv¿¿¿¿¿¿
+            ¿¿¿¿:
+                dst = cv2.GaussianBlur(src, ksize, sigmax)
+            ¿¿:
+                ¿¿¿¿¿¿¿int¿¿, ¿¿¿"-1"¿¿¿¿¿¿¿¿¿
+                ¿¿¿¿¿¿¿(3, 3)¿(5, 5)
+        '''
+        im_source = cv2.cvtColor(self.im,cv2.COLOR_BGR2RGB) 
+        
+        #¿¿¿¿ 
+        im_result = cv2.GaussianBlur(im_source, (3,3), 0) 
+        
+        #¿¿¿¿
+        titles = ['Source Image', 'GaussianBlur Image'] 
+        gaussian_filter_image = [im_source, im_result] 
+        
+        for i in range(2): 
+            plt.subplot(1,2,i+1)
+            plt.imshow(gaussian_filter_image[i], 'gray') 
+            plt.title(titles[i]) 
+            plt.xticks([])
+            plt.yticks([]) 
+        
+        plt.show() 
+        
+        return im_source, im_result, gaussian_filter_image
+
+
+    def median_blur_filter_image(self, im):
+        '''
+            ¿¿opencv¿¿¿¿¿¿
+            ¿¿¿¿:
+                dst = cv2.medianBlur(src, ksize)
+            ¿¿:
+                src¿¿¿¿¿, ksize¿¿¿¿¿;
+                ¿¿¿¿¿¿1¿¿¿, ¿3¿5¿7¿
+        '''
+        
+        #¿¿¿¿
+        im_result = cv2.medianBlur(self.im, 3) 
+        
+        #¿¿¿¿
+        cv2.imshow("source img", self.im) 
+        cv2.imshow("medianBlur", im_result) 
+        
+        #¿¿¿¿
+        cv2.waitKey(0) 
+        cv2.destroyAllWindows()
+        
+        return self.im, im_result
+
+
