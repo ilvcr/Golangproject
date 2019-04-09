@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
 # File Name: image_gray.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Apr  9 12:25:47 2019
+# Created Time: Wed Aug  1 16:25:47 2018
 # Description: 对图像进行灰度化处理
 #************************************************************************#
 
