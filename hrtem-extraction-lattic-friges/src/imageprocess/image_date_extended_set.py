@@ -242,24 +242,3 @@ class imageDataExtendedSet(object):
             logger.error(e)
 
 
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-    
-
-
