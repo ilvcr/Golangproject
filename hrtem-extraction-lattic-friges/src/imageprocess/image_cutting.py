@@ -5,7 +5,7 @@
 # File Name: image_cutting.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Fri  19 15:24:52 2017
+# Created Time: Mon Feb  20 15:24:52 2017
 # Description: 图像切割, 滑动切割,固定切割
 #************************************************************************#
 

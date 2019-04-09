@@ -5,7 +5,7 @@
 # File Name: show_image.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Apr  29 11:25:39 2017
+# Created Time: Fri Apr  28 11:25:39 2017
 # Description: 显示图像的类
 #************************************************************************#
 

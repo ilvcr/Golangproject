@@ -5,7 +5,7 @@
 # File Name: image_skeleton_extraction.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Oct  9 11:06:24 2017
+# Created Time: Thur Oct  9 11:06:24 2017
 # Description: Skeleton extraction  骨架提取
 #************************************************************************#
 

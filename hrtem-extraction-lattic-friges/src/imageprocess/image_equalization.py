@@ -5,7 +5,7 @@
 # File Name: image_equalization.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Nov  29 12:41:09 2017
+# Created Time: Wed Nov  29 12:41:09 2017
 # Description: 对图像进行均衡化处理
 #************************************************************************#
 

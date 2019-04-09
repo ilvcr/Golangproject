@@ -5,7 +5,7 @@
 # File Name: image_gray.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Aug  1 16:25:47 2018
+# Created Time: Wed Aug  1 16:25:47 2018
 # Description: 对图像进行灰度化处理
 #************************************************************************#
 

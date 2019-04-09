@@ -5,7 +5,7 @@
 # File Name: image_process.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Jun  7 12:52:39 2018
+# Created Time: Thur Jun  7 12:52:39 2018
 # Description: 图像处理
 #************************************************************************#
 

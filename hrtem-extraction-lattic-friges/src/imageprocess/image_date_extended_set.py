@@ -5,7 +5,7 @@
 # File Name: image_date_extended_set.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Dec  10 13:05:24 2018
+# Created Time: Mon Dec  10 13:05:24 2018
 # Description: 扩充图像数据集的方法
 #************************************************************************#
 

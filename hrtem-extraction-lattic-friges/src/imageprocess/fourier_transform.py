@@ -5,7 +5,7 @@
 # File Name: fourier_transform.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue May  9 11:01:44 2018
+# Created Time: Mon May  4 11:01:44 2018
 # Description: 傅里叶变换及反傅里叶变换
 #************************************************************************#
 
