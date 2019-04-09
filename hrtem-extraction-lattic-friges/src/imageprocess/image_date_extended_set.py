@@ -180,7 +180,7 @@ class imageDataExtendedSet(object):
 
     def crop(self):
         '''
-            q提取四个角落和中心区域
+            提取四个角落和中心区域
         '''
 
         try:
