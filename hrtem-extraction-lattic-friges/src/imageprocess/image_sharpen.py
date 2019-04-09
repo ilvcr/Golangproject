@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
 # File Name: image_sharpen.py
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
-# Created Time: Tue Apr  9 12:06:52 2019
+# Created Time: Tue Sep  17 10:06:52 2018
 # Description: 图像锐化处理
 #************************************************************************#
 
