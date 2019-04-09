@@ -6,33 +6,32 @@
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
 # Created Time: Tue Apr  9 11:36:15 2019
-# Description: ¿¿¿¿¿¿
+# Description:
 #************************************************************************#
-
 
 class imageFilter(object):
     '''
-        ¿¿¿¿¿¿
+        æ»¤æ³¢ç±»
     '''
     def __init__(self):
         pass
 
     def mean_filter_image(self, im):
         '''
-            ¿¿opencv¿¿¿¿¿¿
-            ¿¿¿¿:
-                result = cv2.blur(¿¿¿¿ ,¿¿¿)
-            ¿¿:
-                ¿¿¿¿(¿¿, ¿¿)¿¿¿¿¿¿¿,
-                ¿¿¿¿¿¿¿(3, 3)¿(5, 5)
+            è°ƒç”¨OpenCVå®ç°å‡å€¼æ»¤æ³¢
+            å‡½æ•°åŸå‹:
+                result = cv2.blur(åŸå§‹å›¾åƒ,æ ¸å¤§å°)
+            å…¶ä¸­:
+                æ ¸å¤§å°æ˜¯ä»¥ï¼ˆå®½åº¦ï¼Œé«˜åº¦ï¼‰è¡¨ç¤ºçš„å…ƒç¥–å½¢å¼;
+                å¸¸è§çš„å½¢å¼åŒ…æ‹¬:æ ¸å¤§å°ï¼ˆ3, 3ï¼‰å’Œï¼ˆ5, 5ï¼‰
         '''
         #img = cv2.imread('test01.png')
         im_source = cv2.cvtColor(self.im, cv2.COLOR_BGR2RGB)
 
-        # ¿¿¿¿
+        #å‡å€¼æ»¤æ³¢
         im_result = cv2.blur(im_source, (5, 5))
 
-        # ¿¿¿¿
+        #æ˜¾ç¤ºå›¾åƒ
         titles = ['Source Image', 'Blur Image'] 
         blur_image = [im_source, im_result] 
         for i in range(2): 
@@ -49,19 +48,18 @@ class imageFilter(object):
 
     def box_filter_image(self, im):
         '''
-            ¿¿opencv¿¿¿¿¿¿
-            ¿¿¿¿: 
-                result = cv2.boxFilter(¿¿¿¿, ¿¿¿¿¿¿, ¿¿¿, normalize¿¿)
-            ¿¿:
-                ¿¿¿¿¿¿¿int¿¿, ¿¿¿"-1"¿¿¿¿¿¿¿¿¿;
-                ¿¿¿¿¿¿¿(3, 3)¿(5, 5)
+            è°ƒç”¨OpenCVå®ç°æ–¹æ¡†æ»¤æ³¢
+            å‡½æ•°åŸå‹:
+                result = cv2.boxFilter(åŸå§‹å›¾åƒ, ç›®æ ‡å›¾åƒæ·±åº¦, æ ¸å¤§å°, normalizeå±æ€§)
+            å…¶ä¸­:
+                ç›®æ ‡å›¾åƒæ·±åº¦æ˜¯intç±»å‹;é€šå¸¸ç”¨â€œ-1â€è¡¨ç¤ºä¸åŸå§‹å›¾åƒä¸€è‡´;
+            æ ¸å¤§å°ä¸»è¦åŒ…æ‹¬ï¼ˆ3;3ï¼‰å’Œï¼ˆ5;5ï¼‰
         '''
         im_source = cv2.cvtColor(self.im, cv2.COLOR_BGR2RGB)
-        
-        #¿¿¿¿
-        im_result = cv2.boxFilter(im_source, -1, (5,5), normalize=1) 
-        
-        #¿¿¿¿
+
+        #æ–¹æ¡†æ»¤æ³¢
+        im_result = cv2.boxFilter(im_source, -1, (5,5), normalize=1)
+
         titles = ['Source Image', 'BoxFilter Image'] 
         box_filter_image = [im_source, im_result] 
         
@@ -79,19 +77,18 @@ class imageFilter(object):
 
     def gaussian_blur_filter_image(self, im):
         '''
-            ¿¿opencv¿¿¿¿¿¿
-            ¿¿¿¿:
-                dst = cv2.GaussianBlur(src, ksize, sigmax)
-            ¿¿:
-                ¿¿¿¿¿¿¿int¿¿, ¿¿¿"-1"¿¿¿¿¿¿¿¿¿
-                ¿¿¿¿¿¿¿(3, 3)¿(5, 5)
+            è°ƒç”¨OpenCVå®ç°é«˜æ–¯æ»¤æ³¢
+            å‡½æ•°åŸå‹ï¼š
+                dst = cv2.GaussianBlur(src, ksize, sigmaX)
+            å…¶ä¸­:
+                ç›®æ ‡å›¾åƒæ·±åº¦æ˜¯intç±»å‹, é€šå¸¸ç”¨â€œ-1â€è¡¨ç¤ºä¸åŸå§‹å›¾åƒä¸€è‡´;
+                æ ¸å¤§å°ä¸»è¦åŒ…æ‹¬ï¼ˆ3, 3ï¼‰å’Œï¼ˆ5, 5ï¼‰
         '''
-        im_source = cv2.cvtColor(self.im,cv2.COLOR_BGR2RGB) 
-        
-        #¿¿¿¿ 
-        im_result = cv2.GaussianBlur(im_source, (3,3), 0) 
-        
-        #¿¿¿¿
+        im_source = cv2.cvtColor(self.im,cv2.COLOR_BGR2RGB)
+
+        #é«˜æ–¯æ»¤æ³¢
+        im_result = cv2.GaussianBlur(im_source, (3,3), 0)
+
         titles = ['Source Image', 'GaussianBlur Image'] 
         gaussian_filter_image = [im_source, im_result] 
         
@@ -109,25 +106,23 @@ class imageFilter(object):
 
     def median_blur_filter_image(self, im):
         '''
-            ¿¿opencv¿¿¿¿¿¿
-            ¿¿¿¿:
+            è°ƒç”¨OpenCVå®ç°ä¸­å€¼æ»¤æ³¢
+            å‡½æ•°åŸå‹ï¼š
                 dst = cv2.medianBlur(src, ksize)
-            ¿¿:
-                src¿¿¿¿¿, ksize¿¿¿¿¿;
-                ¿¿¿¿¿¿1¿¿¿, ¿3¿5¿7¿
+            å…¶ä¸­:
+                srcè¡¨ç¤ºæºæ–‡ä»¶,ksizeè¡¨ç¤ºæ ¸å¤§å°;
+                æ ¸å¿…é¡»æ˜¯å¤§äº1çš„å¥‡æ•°, å¦‚3ã€5ã€7ç­‰
         '''
-        
-        #¿¿¿¿
-        im_result = cv2.medianBlur(self.im, 3) 
-        
-        #¿¿¿¿
+        im_result = cv2.medianBlur(self.im, 3)
+
+        #ä¸­å€¼æ»¤æ³¢
         cv2.imshow("source img", self.im) 
-        cv2.imshow("medianBlur", im_result) 
-        
-        #¿¿¿¿
+        cv2.imshow("medianBlur", im_result)
+
+        #ç­‰å¾…æ˜¾ç¤º
         cv2.waitKey(0) 
         cv2.destroyAllWindows()
         
         return self.im, im_result
 
-
+    
