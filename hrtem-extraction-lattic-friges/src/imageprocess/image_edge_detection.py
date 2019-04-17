@@ -45,7 +45,6 @@ class edgeDetection(object):
         return blurred, gray, xgrad, ygrad, edge_output, dst
 
     
-    def 
 
 
         

@@ -42,7 +42,7 @@ class imageDataExtendedSet(object):
             :param  export_path_base: 图像输出路径
             :param  operate: 图像区域名
 
-            :return: 返回图像存储名
+            :return 返回图像存储名
         '''
 
         try:

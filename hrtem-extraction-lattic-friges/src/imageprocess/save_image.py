@@ -6,7 +6,7 @@
 # Author: yoghourt->ilvcr 
 # Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
 # Created Time: Tue Jun  19 10:23:32 2018
-# Description: 
+# Description: 保存图像
 #************************************************************************#
 
 
@@ -40,7 +40,7 @@ class saveImage(object):
         '''
             将array保存为图像
         '''
-        misc.imsave(save_path+'new_sample_size.png' , im)
+        misc.imsave(save_path+'new_sample_size.png', im)
 
     def direct_save_image_using_array(self, im):
         '''

@@ -21,8 +21,9 @@ class imageCutting(object):
     def image_cutting_slide(self, idxy, vx, vy):
         '''
             滑动切割图片, 修改图片idxy
-            param: idxy为图片id的后两位
-            param: vx, vy
+            :param   idxy为图片id的后两位
+            :param   vx, vy
+            :return  得到的图片数量
         '''
 
         #打开图片
@@ -67,7 +68,7 @@ class imageCutting(object):
             等分切割图片, 
         '''
         #图片的宽度和高度
-        image_size = self.im.size
+        image_size = im.size
         print "图片的宽度和高度分别是 : {}".format(image_size)
         
         xx = 3
@@ -91,7 +92,8 @@ class imageCutting(object):
     def image_cutting_fixed_point(self, im):
         '''
             定点切割图像, 
-            param: im为使用Image.open()打开的图片对象
+            :param    im为使用Image.open()打开的图片对象
+            :return   返回切割后的图像数据
         '''
 
         #图片的宽度和高度

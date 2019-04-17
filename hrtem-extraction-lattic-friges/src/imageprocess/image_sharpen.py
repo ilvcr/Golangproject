@@ -38,7 +38,7 @@ class imageSharpen(object):
         if cv2.waitKey(0) & 0xFF == 27:
             cv2.destoryAllWindows()
 
-        return self.im, im_01
+        return im, im_01
 
     def kernel_sharpen_02(self, im):
         '''

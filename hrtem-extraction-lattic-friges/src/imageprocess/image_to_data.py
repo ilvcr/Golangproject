@@ -20,7 +20,7 @@ class imageToData(object):
         '''
             使用PIL Image将图片转换为便于处理的numpy数组
         '''
-        imarray = np.array(im)
+        im_array = np.array(im)
 
         return im_array
 
