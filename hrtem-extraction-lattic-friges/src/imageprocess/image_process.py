@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -26,30 +26,30 @@ class imageProcess(object):
 
         #读取噪声
         #im = cv2.imread(read_path, cv2.IMREAD_UNCHANGED)
-        rows, cols, _ = self.im.shape
+        rows, cols, _ = im.shape
 
         #增加噪声
         for i in range(5000):
             x = np.random.randint(0, rows)
             y = np.random.randint(0, clos)
-            self.im[x, y, :] = 255
+            im[x, y, :] = 255
 
-        cv2.imshow("noise", self.im)
+        cv2.imshow("noise", im)
         
         #等待显示
         cv2.waitKey(0)
         cv2.destoryAllWIndows()
 
-        return self.im
+        return im
 
 
     def RGB_to_gray_image(self, im):
         '''
             RGB图转换为灰度图
         '''
-        self.im.show()
+        im.show()
 
-        im_gray = self.im.covert('gray')
+        im_gray = im.covert('gray')
         im_gray.show()
 
         return im_gray
@@ -58,7 +58,7 @@ class imageProcess(object):
         '''
             使用scipy对图像进行缩放
         '''
-        im_new_size = misc.imresize(self.im, 0.5)
+        im_new_size = misc.imresize(im, 0.5)
         # 第二个参数若大于1, 则为放大; 小于1则为缩小.
         
         plt.imshow(im_new_size)

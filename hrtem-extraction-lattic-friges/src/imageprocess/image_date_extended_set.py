@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -25,8 +25,8 @@ class imageDataExtendedSet(object):
     '''
     def __init__(self, rootPath, export_path_base):
         
-        self.rootPath = rootPath #图像完整路径
-        self.export_path_base = export_path_base
+        rootPath = rootPath #图像完整路径
+        export_path_base = export_path_base
         
         #创建根目录
         try:

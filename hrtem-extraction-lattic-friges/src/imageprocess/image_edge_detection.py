@@ -24,9 +24,8 @@ class edgeDetection(object):
         '''
         #im = cv2.imread("example")
         cv2.namedWindow('input_image', cv.WINDOW_NORMAL) #设置为WINDOW_NORMAL可以任意缩放
-        cv2.imshow('input_image', self.im
-                   )
-        blurred = cv2.GaussianBlur(self.im, (3, 3), 0)
+        cv2.imshow('input_image', im)
+        blurred = cv2.GaussianBlur(im, (3, 3), 0)
         gray = cv2.cvtColor(blurred, cv2.COLOR_RGB2GRAY)
 
         #xgrad = cv2.Sobel(gray, cv.CV_16SC1, 1, 0) #x方向梯度
@@ -37,7 +36,7 @@ class edgeDetection(object):
         edge_output = cv2.Canny(gray, 50, 150)
         cv2.imshow("Canny Edge", edge_output)
 
-        dst = cv2.bitwise_and(self.im, self.im, mask= edge_output)
+        dst = cv2.bitwise_and(im, im, mask= edge_output)
         cv2.imshow("Color Edge", dst)
 
         cv.waitKey(0)

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -34,7 +34,7 @@ class imageGray(object):
         '''
 
         #二值化处理
-        im_ret, im_fixed = cv2.threshold(self.im, 50, 255, cv2.THRESH_BINARY)
+        im_ret, im_fixed = cv2.threshold(im, 50, 255, cv2.THRESH_BINARY)
 
         return im_ret, im_fixed
 
@@ -44,15 +44,16 @@ class imageGray(object):
         '''
 
         #伽马变换
-        im_gamma = copy.deepcopy(self.im)
+        im_gamma = copy.deepcopy(im)
         
-        rows = self.im.shape[0]
-        cols = self.im.shape[1]
+        rows = im.shape[0]
+        cols = im.shape[1]
+
         for i in range(rows):
             for j in range(cols):
                 im_gamma[i][j] = 3*math.pow(im_gamma[i][j], 0.8)
 
-        return self.im, im_gamma
+        return im, im_gamma
 
     def gray_image_to_log_process(self, im):
         '''
@@ -60,15 +61,15 @@ class imageGray(object):
         '''
         
         #对数变换
-        im_logc = copy.deepcopy(self.im)
+        im_logc = copy.deepcopy(im)
 
-        rows = self.im.shape[0]
-        cols = self.im.shape[1]
+        rows = im.shape[0]
+        cols = im.shape[1]
         for i in range(rows):
             for j in range(cols):
                 im_logc[i][j] = 3*math.log(1 + im_logc[i][j])
 
-        return self.im, im_logc
+        return im, im_logc
 
     def gray_image_to_cover_process(self, im):
         '''
@@ -76,13 +77,14 @@ class imageGray(object):
         '''
 
         #补色变换
-        im_cover = copy.deepcopy(self.im)
+        im_cover = copy.deepcopy(im)
 
-        rows = self.im.shape[0]
-        cols = self.im.shape[1]
+        rows = im.shape[0]
+        cols = im.shape[1]
+
         for i in range(rows):
             for j in range(cols):
                 im_cover[i][j] = 255 - im_cover[i][j]
    
-        return self.im, im_cover
+        return im, im_cover
 

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -28,10 +28,10 @@ class imageSharpen(object):
             [-1, -1, -1]])
 
         #卷积计算
-        im_01 = cv2.filter(self.im, -1, kernel_sharpen_01)
+        im_01 = cv2.filter(im, -1, kernel_sharpen_01)
 
         #显示锐化效果
-        cv2.imshow("Original Image", self.im)
+        cv2.imshow("Original Image", im)
         cv2.imshow("sharpen_01 Image", im_01)
         
         #停顿
@@ -50,17 +50,17 @@ class imageSharpen(object):
             [1, 1, 1]])
 
         #卷积计算
-        im_02 = cv2.filter(self.im, -1, kernel_sharpen_02)
+        im_02 = cv2.filter(im, -1, kernel_sharpen_02)
 
         #显示锐化效果
-        cv2.imshow("Original Image", self.im)
+        cv2.imshow("Original Image", im)
         cv2.imshow("sharpen_02 Image", im_02)
         
         #停顿
         if cv2.waitKey(0) & 0xFF == 27:
             cv2.destoryAllWindows()
 
-        return self.im, im_02
+        return im, im_02
         
     def kernel_sharpen_03(self, im):
         '''
@@ -74,17 +74,17 @@ class imageSharpen(object):
             [-1, -1, -1, -1, -1]]) / 8.0
 
         #卷积计算
-        im_03 = cv2.filter(self.im, -1, kernel_sharpen_03)
+        im_03 = cv2.filter(im, -1, kernel_sharpen_03)
         
         #显示锐化效果
-        cv2.imshow("Original Image", self.im)
+        cv2.imshow("Original Image", im)
         cv2.imshow("sharpen_02 Image", im_03)
         
         #停顿
         if cv2.waitKey(0) & 0xFF == 27:
             cv2.destoryAllWindows()
        
-        return self.im, im_03
+        return im, im_03
 
     def kernel_sharpen_04(self, im):
         '''
@@ -96,17 +96,17 @@ class imageSharpen(object):
             [0, -1, 0]])
 
         #卷积计算
-        im_04 = cv2.filter(self.im, -1, kernel_sharpen_03)
+        im_04 = cv2.filter(im, -1, kernel_sharpen_03)
 
         #显示锐化效果
-        cv2.imshow("Original Image", self.im)
+        cv2.imshow("Original Image", im)
         cv2.imshow("sharpen_02 Image", im_04)
 
         #停顿
         if cv2.waitKey(0) & 0xFF == 27:
             cv2.destoryAllWindows()
         
-        return self.im, im_04
+        return im, im_04
         
         
 

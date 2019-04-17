@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -30,12 +30,12 @@ class skeletonExtraction(object):
                 skimage.morphology.skeletonize(image)
         '''
         #实施骨架算法
-        skleton = morphology.skeletonize(self.im)
+        skleton = morphology.skeletonize(im)
 
         #显示结果
         fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(8, 4))
 
-        ax1.imshow(self.im, cmap=plt.cm.gray)
+        ax1.imshow(im, cmap=plt.cm.gray)
         ax1.axis('off')
         ax1.set_title('original', fontsize=20)
 
@@ -62,7 +62,7 @@ class skeletonExtraction(object):
         '''
 
         #计算中轴和距离变换值
-        skel, distance =morphology.medial_axis(self.im, return_distance=True)
+        skel, distance =morphology.medial_axis(im, return_distance=True)
 
         #中轴上的点到背景像素点的距离
         dist_on_skel = distance * skel
@@ -72,7 +72,7 @@ class skeletonExtraction(object):
 
         #用光谱色显示中轴
         ax2.imshow(dist_on_skel, cmap=plt.cm.spectral, interpolation='nearest')
-        ax2.contour(self.im, [0.5], colors='w')  #显示轮廓线
+        ax2.contour(im, [0.5], colors='w')  #显示轮廓线
 
         fig.tight_layout()
         plt.show()
@@ -89,7 +89,7 @@ class skeletonExtraction(object):
         '''
 
         #使用分水岭算法
-        distance = ndi.distance_transform_edt(self.im) #距离变换
+        distance = ndi.distance_transform_edt(im) #距离变换
 
         local_maxi =feature.peak_local_max(distance, indices=False,
                                            footprint=np.ones((3, 3)),
@@ -128,7 +128,7 @@ class skeletonExtraction(object):
             基于梯度的分水岭算法
         '''
         #image =color.rgb2gray(data.camera())
-        denoised = filter.rank.median(self.im, morphology.disk(2)) #过滤噪声
+        denoised = filter.rank.median(im, morphology.disk(2)) #过滤噪声
 
         #将梯度值低于10的作为开始标记点
         markers = filter.rank.gradient(denoised, morphology.disk(5)) <10

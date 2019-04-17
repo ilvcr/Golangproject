@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -26,8 +26,8 @@ class imageCutting(object):
         '''
 
         #打开图片
-        name_01 = 'sample' + self.idxy + '.jpg'
-        name_02 = 'sample' + self.idxy + '_cut_'
+        name_01 = 'sample' + idxy + '.jpg'
+        name_02 = 'sample' + idxy + '_cut_'
         im = Image.open(name_01)
 
         #偏移量
@@ -50,11 +50,11 @@ class imageCutting(object):
                 im_02 = im.crop((y1, x1, y2, x2))
                 im2.save(name_03)
                 y1 = y1 + dy
-                y2 = y1 + self.vy
+                y2 = y1 + vy
                 n = n + 1
 
             x1 = x1 + dx
-            x2 = x1 + self.vx
+            x2 = x1 + vx
             y1 = 0
             y2 = vy
 
@@ -82,7 +82,7 @@ class imageCutting(object):
                 right = left + x
                 low = up + y
                 
-                region = self.im.crop((left, up, right, low))
+                region = im.crop((left, up, right, low))
                 print "left : {}, up : {}, right : {}, low : {}\n".format(left, up, right, low)
                 temp = str(i) + str(j)
                 region.save(savepath+temp+'.png')
@@ -95,7 +95,7 @@ class imageCutting(object):
         '''
 
         #图片的宽度和高度
-        image_size = self.im.size
+        image_size = im.size
         print "图片的宽度和高度分别是 : {}".format(image_size)
 
         left = 80
@@ -103,7 +103,7 @@ class imageCutting(object):
         right = 505
         lower = 640
 
-        region = self.im.crop((left, upper, right, lower))
+        region = im.crop((left, upper, right, lower))
         region.save(savepath)
 
         return region

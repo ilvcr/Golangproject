@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -27,15 +27,15 @@ class imageEqualization(object):
         #im = data.moon()
         #plt.figure("hist", figsize=(8, 8))
 
-        im_arr = self.im.flatten()
+        im_arr = im.flatten()
 
         plt.subplot(221)
-        plt.imshow(self.im, plt.cm.gray) #原始图像
+        plt.imshow(im, plt.cm.gray) #原始图像
 
         plt.subplot(222)
         plt.hiast(im_arr, bins=256, normed=1, edgecolor='None', facecolor='red') #原始图像直方图
 
-        im_01 = exposure.equalize_hist(self.im)
+        im_01 = exposure.equalize_hist(im)
         im_arr_01 = im_01.flatten()
 
         plt.subplot(223)

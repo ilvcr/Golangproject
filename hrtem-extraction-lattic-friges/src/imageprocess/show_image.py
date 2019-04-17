@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -25,7 +25,7 @@ class showImage(object):
             显示图片
             im为使用Image.open("sample")打开的图片
         '''
-        self.im.show()
+        im.show()
 
         #return self.im
 
@@ -36,9 +36,9 @@ class showImage(object):
         '''
 
         #im 为一个np.array数组, 可对其进行任意处理
-        self.im.shape(512, 512, 3)
+        im.shape(512, 512, 3)
 
-        plt.imshow(self.im) # 显示图片
+        plt.imshow(im) # 显示图片
         plt.axis('off') # 不显示坐标轴
         plt.show()
     
@@ -49,7 +49,7 @@ class showImage(object):
         '''
             使用plt显示图片
         '''
-        np.save('sample', self.im)
+        np.save('sample', im)
         img = np.load('sample.npy')
 
         plt.imshow(img)
@@ -60,7 +60,7 @@ class showImage(object):
         '''
             显示图片的e第一个通道
         '''
-        im_1 = self.im[:, :, 0]
+        im_1 = im[:, :, 0]
         plt.imshow('im_1')
         plt.show()
 

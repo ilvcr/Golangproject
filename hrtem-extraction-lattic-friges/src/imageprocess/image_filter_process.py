@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -26,7 +26,7 @@ class imageFilter(object):
                 常见的形式包括:核大小（3, 3）和（5, 5）
         '''
         #img = cv2.imread('test01.png')
-        im_source = cv2.cvtColor(self.im, cv2.COLOR_BGR2RGB)
+        im_source = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 
         #均值滤波
         im_result = cv2.blur(im_source, (5, 5))
@@ -55,7 +55,7 @@ class imageFilter(object):
                 目标图像深度是int类型;通常用“-1”表示与原始图像一致;
             核大小主要包括（3;3）和（5;5）
         '''
-        im_source = cv2.cvtColor(self.im, cv2.COLOR_BGR2RGB)
+        im_source = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 
         #方框滤波
         im_result = cv2.boxFilter(im_source, -1, (5,5), normalize=1)
@@ -84,7 +84,7 @@ class imageFilter(object):
                 目标图像深度是int类型, 通常用“-1”表示与原始图像一致;
                 核大小主要包括（3, 3）和（5, 5）
         '''
-        im_source = cv2.cvtColor(self.im,cv2.COLOR_BGR2RGB)
+        im_source = cv2.cvtColor(im,cv2.COLOR_BGR2RGB)
 
         #高斯滤波
         im_result = cv2.GaussianBlur(im_source, (3,3), 0)
@@ -113,16 +113,16 @@ class imageFilter(object):
                 src表示源文件,ksize表示核大小;
                 核必须是大于1的奇数, 如3、5、7等
         '''
-        im_result = cv2.medianBlur(self.im, 3)
+        im_result = cv2.medianBlur(im, 3)
 
         #中值滤波
-        cv2.imshow("source img", self.im) 
+        cv2.imshow("source img", im) 
         cv2.imshow("medianBlur", im_result)
 
         #等待显示
         cv2.waitKey(0) 
         cv2.destroyAllWindows()
         
-        return self.im, im_result
+        return im, im_result
 
     

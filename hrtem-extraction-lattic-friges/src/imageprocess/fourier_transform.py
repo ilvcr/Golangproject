@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 
 #*************************************************************************#
@@ -22,7 +22,7 @@ class imageFFT(object):
         '''
 
         # 由公式转换为灰度图
-        im = 0.2126 * self.im[:, :, 0] + 0.7152 * self.im[:, :, 1] + 0.0722 * self.im[:, :, 2]
+        im = 0.2126 * im[:, :, 0] + 0.7152 * im[:, :, 1] + 0.0722 * im[:, :, 2]
 
         #显示原图
         plt.subplot(231)
@@ -61,7 +61,7 @@ class imageFFT(object):
         '''
         #im = cv2.imread(read_path, 0)
 
-        dft = cv2.dft(np.float32(self.im), flags=cv2.DFT_COMPLEX_OUTPUT)
+        dft = cv2.dft(np.float32(im), flags=cv2.DFT_COMPLEX_OUTPUT)
 
         plt.subplot(211)
         plt.axis('off')
@@ -80,7 +80,7 @@ class imageFFT(object):
         '''
             使用cv2库进行图像的反傅里叶变换
         '''
-        idft_shift = np.fft.ifftshift(self.im)
+        idft_shift = np.fft.ifftshift(im)
         plt.subplot(211)
         plt.axis('off')
         plt.title('origin')
