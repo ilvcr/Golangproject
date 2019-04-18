@@ -9,7 +9,7 @@
 # Description: 显示图像的类
 #************************************************************************#
 
-import image_preprocess
+#import image_preprocess
 from PIL import Image
 import matplotlib.image as mping # mping用于读取图片
 
@@ -27,7 +27,7 @@ class showImage(object):
         '''
         im.show()
 
-        #return self.im
+        #return im
 
     def show_image_using_mping(self, im):
         '''
@@ -42,7 +42,7 @@ class showImage(object):
         plt.axis('off') # 不显示坐标轴
         plt.show()
     
-        #return self.im
+        #return im
 
     
     def show_image_using_plt(self, im):
