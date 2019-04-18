@@ -9,6 +9,11 @@
 # Description: 傅里叶变换及反傅里叶变换
 #************************************************************************#
 
+from src.imageprocess import image_to_data
+import matplotlib.pyplot as plt
+from numpy as np
+import cv2
+
 class imageFFT(object):
     '''
         傅里叶变换及反傅里叶变换

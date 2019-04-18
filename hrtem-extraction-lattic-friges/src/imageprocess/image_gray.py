@@ -9,6 +9,7 @@
 # Description: 对图像进行灰度化处理
 #************************************************************************#
 
+import matplotlib.pyplot as plt
 import copy
 import math
 

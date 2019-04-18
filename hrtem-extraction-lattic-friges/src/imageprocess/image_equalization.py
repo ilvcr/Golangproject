@@ -9,9 +9,10 @@
 # Description: 对图像进行均衡化处理
 #************************************************************************#
 
-
+from src.imageprocess import image_to_data
 from skimage import data, exposure
 import matplotlib.pyplot as plt
+
 
 class imageEqualization(object):
     '''

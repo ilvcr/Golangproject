@@ -26,7 +26,3 @@ class imageToData(object):
 
         return im_array
 
-
-
-
-

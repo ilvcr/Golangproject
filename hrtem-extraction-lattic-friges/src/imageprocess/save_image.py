@@ -9,6 +9,11 @@
 # Description: 保存图像
 #************************************************************************#
 
+from src.imageprocess import image_to_data
+from PIL import Image
+from scipy as misc
+import numpy as np
+import matplotlib.pyplot as plt
 
 class saveImage(object):
     '''

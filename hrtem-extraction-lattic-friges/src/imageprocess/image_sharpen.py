@@ -9,6 +9,10 @@
 # Description: 图像锐化处理
 #************************************************************************#
 
+from src.imageprocess import image_to_data
+import cv2
+import numpy as np
+
 
 class imageSharpen(object):
     '''

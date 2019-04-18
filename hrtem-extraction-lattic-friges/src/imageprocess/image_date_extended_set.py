@@ -12,8 +12,10 @@
 import os
 import time
 from PIL import Image
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from diagnose_logging import Logger
+from src.imageprocess import image_to_data
+
 
 #声明日志
 log = Logger('image_date_extended_set')

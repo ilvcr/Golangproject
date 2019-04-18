@@ -9,6 +9,7 @@
 # Description: Skeleton extraction  骨架提取
 #************************************************************************#
 
+from src.imageprocess import image_to_data
 from skimage import morphology, draw, feature, color, data, filter
 import numpy as np
 import matplotlib.pyplot as plt

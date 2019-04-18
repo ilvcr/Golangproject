@@ -10,6 +10,7 @@
 #************************************************************************#
 
 from PIL import Image
+from src.imageprocess import image_to_data
 
 class imageCutting(object):
     '''

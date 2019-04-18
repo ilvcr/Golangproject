@@ -10,6 +10,9 @@
 #************************************************************************#
 
 import cv2
+from src.imageprocess import image_to_data
+
+
 
 class edgeDetection(object):
     '''
@@ -39,8 +42,8 @@ class edgeDetection(object):
         dst = cv2.bitwise_and(im, im, mask= edge_output)
         cv2.imshow("Color Edge", dst)
 
-        cv.waitKey(0)
-        cv.destroyAllWindows()
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
         return blurred, gray, xgrad, ygrad, edge_output, dst
 

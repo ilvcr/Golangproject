@@ -9,6 +9,9 @@
 # Description: 图像处理
 #************************************************************************#
 
+from src.imageprocess import image_to_data
+import cv2
+
 class imageProcess(object):
     '''
         图像处理如：
