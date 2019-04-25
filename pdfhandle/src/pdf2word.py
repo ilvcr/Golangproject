@@ -22,41 +22,42 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from docx import Document
 
+class PDFToWord(object):
+    def read_from_pdf(self, file_path):
+        with open(file_path, 'rb') as file:
+            resource_manager = PDFResourceManager()
+            return_str = StringIO()
+            lap_params = LAParams()
 
-def read_from_pdf(file_path):
-    with open(file_path, 'rb') as file:
-        resource_manager = PDFResourceManager()
-        return_str = StringIO()
-        lap_params = LAParams()
+            device = TextConverter(
+                resource_manager, return_str, laparams=lap_params)
+            process_pdf(resource_manager, device, file)
+            device.close()
 
-        device = TextConverter(
-            resource_manager, return_str, laparams=lap_params)
-        process_pdf(resource_manager, device, file)
-        device.close()
-
-        content = return_str.getvalue()
-        return_str.close()
-        return content
-
-
-def save_text_to_word(content, file_path):
-    doc = Document()
-    for line in content.split('\n'):
-        paragraph = doc.add_paragraph()
-        paragraph.add_run(remove_control_characters(line))
-    doc.save(file_path)
+            content = return_str.getvalue()
+            return_str.close()
+            return content
 
 
-def remove_control_characters(content):
-    mpa = dict.fromkeys(range(32))
-    return content.translate(mpa)
+    def save_text_to_word(self, content, file_path):
+        doc = Document()
+        for line in content.split('\n'):
+            paragraph = doc.add_paragraph()
+            paragraph.add_run(remove_control_characters(line))
+        doc.save(file_path)
 
 
-def pdf_to_word(pdf_file_path, word_file_path):
-    content = read_from_pdf(pdf_file_path)
-    save_text_to_word(content, word_file_path)
+    def remove_control_characters(self, content):
+        mpa = dict.fromkeys(range(32))
+        return content.translate(mpa)
 
 
+    def pdf_to_word(self, pdf_file_path, word_file_path):
+        content = read_from_pdf(pdf_file_path)
+        save_text_to_word(content, word_file_path)
+
+
+'''
 def main():
     config_parser = ConfigParser()
     config_parser.read('config.cfg')
@@ -86,3 +87,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+'''
+
+

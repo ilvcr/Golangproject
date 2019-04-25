@@ -23,6 +23,6 @@ def file_rename():
         print old_name, '==========>', new_name
         n += 1
 
-if __name__ '__main__':
+if __name__ == '__main__':
     file_path
 
