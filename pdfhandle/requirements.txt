@@ -1,0 +1,9 @@
+numpy==
+pandas==
+PIL==
+matplotlib==
+scipy==
+cv==
+cv2==
+tensorflow==
+
