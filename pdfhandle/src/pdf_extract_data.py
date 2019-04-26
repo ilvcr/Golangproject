@@ -1,9 +1,20 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+#*************************************************************************#
+# File Name: pdf_extract_data.py
+# Author: yoghourt->ilvcr 
+# Mail: liyaoliu@foxmail.com  @@  ilvcr@outlook.com 
+# Created Time: Tue Apr 24 15:57:19 2018
+# Description: æŒ‰æ–‡ä»¶å¤¹æ‰¹é‡è½¬æ¢wordä¸ºpdfæ–‡ä»¶
+#************************************************************************#
+
 import PyPDF2
 
 
 def from_pdf_read_txt():
 	'''
-		´ÓpdfÎÄ¼şÖĞ¼òµ¥ÌáÈ¡ÎÄ±¾
+		ä»pdfæ–‡ä»¶ä¸­ç®€å•æå–æ–‡æœ¬
 	'''
 	with open('example.pdf', 'rb') as pdfFileObj:
 		pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
@@ -15,16 +26,16 @@ import tabula
 
 def from_pdf_read_excel():
 	'''
-		´ÓpdfÎÄ¼şÖĞÌáÈ¡±í¸ñÊı¾İ
+		ä»pdfæ–‡ä»¶ä¸­æå–è¡¨æ ¼æ•°æ®
 	''' 
 	df = tabula.read_pdf('example.pdf', multiple_tables=True)
 	df.read()
 	
-	#´ÓÌØ¶¨µÄÒ³Ãæ¶ÁÈ¡
+	#ä»ç‰¹å®šçš„é¡µé¢è¯»å–
 	df = tabula.read_pdf('example.pdf', area=(126, 149, 212, 462), pages=1)
 	df.read()
 
-	#ÉèÖÃ¶ÁÈ¡µÄÊä³öÎªJSON¸ñÊ½
+	#è®¾ç½®è¯»å–çš„è¾“å‡ºä¸ºJSONæ ¼å¼
 	df = tabula.read_pdf('example.pdf', output_format='json')
 	df.read()
 
