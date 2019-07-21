@@ -14,7 +14,7 @@ def main():
     
     print("This program illustrating chaotic behaviour")
     
-    whilr True:
+    while True:
         try:
             x = float((input("Enter a number between 0 and 1: ")))
             if(0 < x and x < 1):

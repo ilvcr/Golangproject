@@ -13,7 +13,7 @@ def test():
     for i in range(10):
         a = i
         i += 1
-    print i
+    printi
     
     
 if __name__ == '__main__':
